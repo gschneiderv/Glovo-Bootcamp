@@ -18,7 +18,7 @@ def matrix_identity(numrows, numcols):
         matrix.append(row)
     return matrix
 
-def is_correct_matrix(matrix):
+def is_correct_matrix(matrix): #It is to check all elements of matrix are the right type of value!
     """
     Receives: a list of list and check if all elements are integers or floats]
     Returns a boolean value: True if all are integers, false otherwise
@@ -120,7 +120,8 @@ def process_matrix(matrix):
     Transformation: each new element (M[i][j]) is the result of calculating the average of itself and 
     its neighbours (horizontal and verticals ones) 
     """
-    
+    #Analized error's cases: when matrix is an empty list and when there is at least one element of matrix
+    #that is not a number (integer or float). It is just in case the user does'nt put a correcta value in the matrix
     if matrix == []:
         return []
     elif not is_correct_matrix(matrix):
