@@ -1,4 +1,6 @@
 from functools import reduce
+from logging import raiseExceptions
+
 
 #Beggining: looking for the identity matrix that has the size of the original matrix passed by the user ("matrix")
 def matrix_identity(numrows, numcols):
@@ -15,6 +17,19 @@ def matrix_identity(numrows, numcols):
                 row.append(0)
         matrix.append(row)
     return matrix
+
+def is_correct_matrix(matrix):
+    """
+    Receives: a list of list and check if all elements are integers or floats]
+    Returns a boolean value: True if all are integers, false otherwise
+    """
+    num_rows = len(matrix)  
+    num_columns = len(matrix[0])
+    for i in range(num_rows):
+        for j in range(num_columns):
+            if type(matrix[i][j]) != int and type(matrix[i][j]) != float:                
+                return False  
+    return True
 
 
 
@@ -108,6 +123,9 @@ def process_matrix(matrix):
     
     if matrix == []:
         return []
+    elif not is_correct_matrix(matrix):
+        raise ValueError("Wrong type of value. Insert just integers!")
+
 
     # Calculate: number of rows as lenght of the matrix(list of lists), and number of columns as the lenght of a row
     num_rows = len(matrix)  
@@ -195,6 +213,8 @@ def average(neighbours):
 #testing solution2    
 new_matrix = process_matrix([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
 new_matrix2 = process_matrix([])
+
 print(f"testing of solution2:\n {new_matrix}")
 print(f"testing of solution2:\n {new_matrix2}")
 
+#print(is_correct_matrix([[0,"a"], ["b", "c"]]))
