@@ -55,7 +55,8 @@ def matrix_identity(numrows, numcols):
 #     its neighbours (horizontal and verticals ones)  
     
 #     """
-    
+#     if matrix == []:
+#         return []  
 #     # Calculate: number of rows as lenght of the matrix(list of lists), and number of columns as the lenght of a row
 #     row = len(matrix)
 #     column = len(matrix[0])
@@ -105,6 +106,9 @@ def process_matrix(matrix):
     its neighbours (horizontal and verticals ones) 
     """
     
+    if matrix == []:
+        return []
+
     # Calculate: number of rows as lenght of the matrix(list of lists), and number of columns as the lenght of a row
     num_rows = len(matrix)  
     num_columns = len(matrix[0])
@@ -182,10 +186,15 @@ def average(neighbours):
 
 
 #testing solution1:
-#new_matrix= process_matrix_solution1([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
-#print(f"testing of solution1:\n {new_matrix}")
+# new_matrix= process_matrix_solution1([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
+# print(f"testing of solution1:\n {new_matrix}")
+# new_matrix2 = process_matrix_solution1([])
+# print(f"testing of solution1:\n {new_matrix2}")
+
 
 #testing solution2    
-new_matrix= process_matrix([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
+new_matrix = process_matrix([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
+new_matrix2 = process_matrix([])
 print(f"testing of solution2:\n {new_matrix}")
+print(f"testing of solution2:\n {new_matrix2}")
 
