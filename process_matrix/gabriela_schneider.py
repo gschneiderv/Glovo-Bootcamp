@@ -97,7 +97,7 @@ def matrix_identity(numrows, numcols):
 
 "================================================================================================"
 
-def process_matrix_solution2(matrix):
+def process_matrix(matrix):
     """
     Recieves: a list of lists (matrix)
     Returns: a matrix with equal lenght and number of elements as the original (the new matrix is a transformation applied to each element of the original matrix)
@@ -186,6 +186,6 @@ def average(neighbours):
 #print(f"testing of solution1:\n {new_matrix}")
 
 #testing solution2    
-new_matrix= process_matrix_solution2([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
+new_matrix= process_matrix([[2,4,6,8], [2,4,6,8], [2,4,6,8]])
 print(f"testing of solution2:\n {new_matrix}")
 
