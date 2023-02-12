@@ -1,0 +1,62 @@
+---
+title: "analisis exploratorio"
+format: html
+editor: visual
+---
+
+```{r}
+#install.packages("RPostgreSQL")
+
+# Create a connection to the database
+
+library('RPostgreSQL')
+
+## Loading required package: DBI
+pg = dbDriver("PostgreSQL")
+
+# Local Postgres.app database; no password by default
+# Of course, you fill in your own database information here.
+con = dbConnect(pg, user="gaby", password="",
+                 host="localhost", port=5432, dbname="proyecto_final")
+
+df_airbnb_madrid = dbReadTable(con, "airbnb_list")
+summary(dtab) 
+
+```
+
+```{r}
+View(df_airbnb_madrid)
+```
+
+Exploro las opciones de las features que voy a querer evaluar
+
+```{r}
+
+unique(df_airbnb_madrid$Property.Type)
+unique(df_airbnb_madrid$Room.Type)
+unique(df_airbnb_madrid$Bed.Type)
+unique(df_airbnb_madrid$Cancellation.Policy)
+
+
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
