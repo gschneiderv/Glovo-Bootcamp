@@ -18,5 +18,5 @@ df_airbnb_madrid = df_madrid[df_madrid["City"] == "Madrid"]
 
 #Lo cargamos a la base de datos (postgress)(load)
 
-engine = create_engine('postgresql://phmkeaeu:D-RiqEmcoViv8Sojo5L8ExxM9ufa0mkV@trumpet.db.elephantsql.com/phmkeaeu')
+engine = create_engine('postgresql://usuario:password@trumpet.db.elephantsql.com/dbname')
 df_airbnb_madrid.to_sql('airbnb_list', engine)
